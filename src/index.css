@@ -1,13 +1,117 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* 
+---- Базовые настройки стилей 
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Work+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    /* Палитка цветов */
+    --color-accent: #EE3D48;
+    --color-font-main: #131313;
+    --color-bg: #fff;
+    --color-container: #fff;
+    --color-tag: #F1F2F2;
+    --color-container-second: #FAFAFA;
+    --color-font-second: #6A6A6A;
+    --color-label: #939598;
+    /* Дополнительные эффекты */
+    --filter-shadow: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.1));
+
+    /* Отступы */
+    --main-offset: 16px;
+
+    /* Шрифты */
+    --font-main: 'Work Sans', 'Montserrat', sans-serif;
+    --font-second: 'Roboto Slab', serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-main);
+    font-size: 14px;
+    background: var(--color-bg);
+    overflow-x: hidden;
+}
+
+/* 
+---- Стилизация основных элементов
+*/
+
+h1, h2 {
+    font-weight: 700;
+    font-family: var(--font-second);
+}
+
+h1 {
+    font-size: 2.85em;
+}
+
+h2 {
+    font-size: 2.3em;
+    text-align: left;
+}
+
+h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+a {
+    color: var(--color-accent);
+}
+
+a:hover {
+    opacity: .8;
+}
+
+p, h1, h2, h3, h4, a, input {
+    line-height: 130%;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* 
+---- Общие классы
+*/
+
+.title_big {
+    font-size: 1.12em;
+    color: var(--color-accent);
+    font-weight: 400;
+}
+
+.title_middle {
+    font-size: 0.85em;
+    color: var(--color-accent);
+    font-weight: 500;
+}
+
+.container_wrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container {
+    padding: 0 var(--main-offset);
+    width: 100%;
+    filter: var(--filter-shadow);
+    background: var(--color-container);
+}
+
+.closeModal {
+    opacity: 0 !important;
 }

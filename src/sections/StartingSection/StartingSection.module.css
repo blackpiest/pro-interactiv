@@ -1,0 +1,63 @@
+.logo {
+    margin-top: 10px;
+    align-self: start;
+}
+
+.section {
+    padding: 0 var(--main-offset);
+}
+
+.accent {
+    color: var(--color-accent);
+}
+
+.text {
+    font-size: 1.15em;
+    margin: 20px 0;
+}
+
+.starsList {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items:stretch;
+    height: 200px;
+    width: 100%;
+    list-style: none;
+}
+
+.starsList__item {
+    width: 156px;
+    height: 84px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+}
+
+.starsList__item div {
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon_1 {
+    background-image: url('./../../assets/icons/icon_infinity.svg');
+}
+
+.icon_2 {
+    background-image: url('./../../assets/icons/icon_mask.svg');
+}
+
+.icon_3 {
+    background-image: url('./../../assets/icons/icon_photo.svg');
+}
+
+.icon_4 {
+    background-image: url('./../../assets/icons/icon_price.svg');
+}
+

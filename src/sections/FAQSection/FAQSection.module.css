@@ -1,0 +1,71 @@
+.section {
+    padding: 0 16px;
+    margin: 45px 0 60px 0;
+}
+
+.faq {
+    margin-top: 20px;
+}
+
+.spoiler {
+    display: block;
+    margin: 10px 0;
+}
+.btn {
+    outline: none;
+    border: 0;
+    background: none;
+    width: 24px;
+    height: 24px;
+    background: url('./../../assets/icons/icon_spoiler.svg') no-repeat;
+    transition: transform 200ms ease;
+}
+
+.btn.active {
+    filter: brightness(10);
+    transform: rotate(180deg);
+}
+
+.spoiler__header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-bg);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 14px 8px;
+    border-radius: 4px;
+}
+
+.spoiler__header.active {
+    background: var(--color-accent);
+}
+
+.spoiler__header p {
+    font-size: 1.15em;
+    font-weight: 500;
+}
+
+.spoiler__header.active p {
+    color: var(--color-bg);
+}
+
+.spoiler__body{
+    height: 0;
+    transition: height 200ms ease;
+    overflow: hidden;
+    color: var(--color-font-second);
+    padding-left: 10px;
+    font-weight: 500;
+}
+
+.spoiler__body.active {
+    margin: 14px 0 10px 0;
+    overflow-y: auto;
+    height: 120px;
+}
+
+
+.spoiler__body.active p{
+    height: 100%;
+}

@@ -1,0 +1,63 @@
+.section {
+    padding: 0 var(--main-offset);
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.cardNews {
+    width: 100%;
+    background: var(--color-container-second);
+    margin-top: 20px;
+}
+
+.cardNews__cover {
+    width: 100%;
+    height: calc(100vw - (var(--main-offset) * 2));
+}
+
+.cardNews__cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardNews__body {
+    position: relative;
+    padding: 20px 8px;
+}
+
+.cardNews__body::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: -36px;
+    width: 40px;
+    height: 40px;
+    background: url('./../../assets/cover_angle.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.cardNews__body h3 {
+    margin: 4px 0 8px 0;
+}
+
+.cardNews__body__text {
+    font-weight: 500;
+    font-size: .85em;
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 30px;
+}
+
+.cardNews__body__date {
+    color: var(--color-font-second);
+    font-weight: 500;
+    font-size: .85em;
+}

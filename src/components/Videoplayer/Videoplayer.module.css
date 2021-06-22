@@ -1,0 +1,122 @@
+.videoplayer {
+    background: url('./../../assets/videoplayer/video_bg.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 56vw;
+    position: relative;
+    margin: 40px auto 60px auto;
+}
+
+.videoplayer::after {
+    position: absolute;
+    content: "";
+    left: -10px;
+    bottom: -40px;
+    width: 125px;
+    height: 125px;
+    background: url('./../../assets/videoplayer/video_bg_object_1.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    filter: drop-shadow(0px 4px 30px rgba(238, 61, 72, 0.5));
+}
+
+.videoplayer::before {
+    position: absolute;
+    content: "";
+    right: -10px;
+    top: -11px;
+    width: 82px;
+    height: 44px;
+    background: url('./../../assets/videoplayer/video_bg_object_2.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.videoplayer__video {
+    overflow: hidden;
+    width: 88vw;
+    height: 52vw;
+    border-radius: 8px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.videoplayer__cover {
+    width: 100%;
+    height: 100%;
+    background: url('./../../assets/videoplayer/video_cover.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.videoplayer__play {
+    width: 70px;
+    height: 70px;
+    background: none;
+    border: 0;
+    outline: none;
+    background: url('./../../assets/icons/icon_play.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 200ms ease;
+}
+
+.videoplayer__play:hover {
+    opacity: .8;
+}
+
+.videoplayerModal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    animation: opacity 250ms ease-in;
+    opacity: 1;
+    transition: opacity 200ms ease-in;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.videoplayerModal__wrapper {
+    width: 90vw;
+    height: 50vw;
+    background: var(--color-container);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.videoplayerModal__video {
+    width: 96%;
+    height: 94%;
+}
+
+.btn {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    z-index: 7;
+}
