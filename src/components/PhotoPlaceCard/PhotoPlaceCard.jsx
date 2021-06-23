@@ -2,6 +2,8 @@ import React from 'react';
 import style from './PhotoPlaceCard.module.css';
 import Button from '../Button/Button';
 import ItemList from './ItemList.jsx';
+import PhotoPlaceOption from './PhotoPlaceOption';
+import Slider from '../Slider/Slider';
 
 const PhotoPlaceCard = (props) => {
     const timeList = [
@@ -17,14 +19,53 @@ const PhotoPlaceCard = (props) => {
         return <ItemList key={item.id} id={item.id} title={item.title} idCard={props.id} />
     });
 
+    const createOptions = () => {
+        const optionList = [];
+        const count = 3;
+        
+        const optionSetting = {
+            title: "Разработка макета рамки #",
+            price: 17500,
+            cover: "https://egor-redchenko.ru/test_pro_interactiv/photo.jpg",
+        };
+
+        for (let i = 0; i < count; i++) {
+            optionList.push(
+                <PhotoPlaceOption
+                    key={i}
+                    id={`${props.id}_${i}`}
+                    title={optionSetting.title + (i+1)}
+                    cover={optionSetting.cover}
+                    price={optionSetting.price + (i * 100)}
+                />
+            );
+        }
+
+        return optionList;
+    }
+
+    const slides = [
+        {id: 0, url: "https://egor-redchenko.ru/test_pro_interactiv/photo.jpg", title: ""},
+        {id: 1, url: "https://egor-redchenko.ru/test_pro_interactiv/photo.jpg", title: ""},
+        {id: 2, url: "https://egor-redchenko.ru/test_pro_interactiv/photo.jpg", title: ""},
+        {id: 3, url: "https://egor-redchenko.ru/test_pro_interactiv/photo.jpg", title: ""},
+        {id: 4, url: "https://egor-redchenko.ru/test_pro_interactiv/photo.jpg", title: ""}
+    ]   
+
     return (
         <div className={`container ${style.card}`}>
-            <div className={style.slider}></div>
+            <Slider images={slides}/>
             <div className={style.card__name}>
                 <h3>{props.title}</h3>
                 <p><strong>Размер: </strong>{props.size}</p>
             </div>
-            <div className={style.options}></div>
+            <div className={style.options}>
+                <p className={style.options__title}>Доп. опции</p>
+                <div className={style.options__group}>
+                    {createOptions()}
+                </div>
+            </div>
+
             <div className={style.card__time}>
                 <p className={style.card__time__title}>Укажите время аренды</p>
                 <form className={style.card__time__form}>

@@ -6,7 +6,7 @@ const PhotoPlaceSection = () => {
 
     const createCard = () => {
         const cardList = [];
-        const count = 20;
+        const count = 3;
         const cardSetting = {
             title: "Фотобудка с ширмой #",
             price: 17000,

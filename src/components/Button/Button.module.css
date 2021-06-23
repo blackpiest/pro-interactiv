@@ -82,3 +82,7 @@
 .btn:active {
     transform: translateY(3px);
 }
+
+.btnLeft:active {
+    transform: translateY(3px) scale(-1);
+}
