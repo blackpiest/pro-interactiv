@@ -61,3 +61,63 @@
     font-weight: 500;
     font-size: .85em;
 }
+
+.modalNews {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.411);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.modalNews__wrapper {
+    width: 90%;
+    height: auto;
+    background: var(--color-container);
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.btnModal {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    z-index: 5;
+}
+
+.modalNews__header {
+    display: flex;
+    padding: 0 12px;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.date {
+    color: var(--color-font-second);
+    font-weight: 500;
+    font-size: .85em;
+}
+
+.modalNews__wrapper h3 {
+    padding: 0 12px;
+}
+
+.modalNews__body {
+    margin-top: 12px;
+    width: 100%;
+    padding: 0 12px;
+    max-height: 120px;
+    /* height: 80%; */
+    overflow: scroll;
+}
+
+.slider .swiper-slide {
+    height: 500px !important;
+}

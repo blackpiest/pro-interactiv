@@ -28,7 +28,7 @@ const ContactsSection = () => {
                 {contacts}
             </div>
             <div className={style.map}>
-                <img src="https://egor-redchenko.ru/test_pro_interactiv/map.jpg" alt="" />
+            <iframe title="map" src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa2b7c527075f2080f0a9e88925d0cd5392967ea074959b17582187527208c610&amp;source=constructor" width="100%" height="100%" frameBorder="0"></iframe>
             </div>
         </section>
     );

@@ -17,6 +17,7 @@ const Slider = (props) => {
     })
     return (
         <Swiper
+            className={props.className}
             spaceBetween={10}
             navigation={true}
             pagination={{ "dynamicBullets": true }}>

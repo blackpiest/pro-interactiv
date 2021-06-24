@@ -61,3 +61,15 @@
     background-image: url('./../../assets/icons/icon_price.svg');
 }
 
+@media screen and (max-width: 320px) {
+    .starsList {
+        height: auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .starsList__item  {
+        width: 120px;
+        margin: 10px;
+    }
+}
+

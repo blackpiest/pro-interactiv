@@ -9,41 +9,13 @@ class NewsSection extends React.Component {
         super(props);
 
         this.state = {
-            displayNews: [],
             currentPage: 1,
             maxPage: Math.ceil(this.newsCreateLength / this.countNews),
             isDisplayModal: false,
             infoCard: null
         };
     };
-
-    newsData = [];
-    countNews = 3;
-    newsCreateLength = 20;
-
-    newsSetting = {
-        title: "Фотобудки, GIF стойка #",
-        text: "У нас есть широчайший ассортимент фотобудок на все случаи жизни",
-        date: "20 Марта 2021",
-        catergory: "Услуги",
-        cover: "https://egor-redchenko.ru/test_pro_interactiv/photo_2.jpg"
-    };
-
     componentDidMount() {
-        for (let i = 0; i < this.newsCreateLength; i++) {
-            this.newsData.push(
-                <CardNews
-                    key={i}
-                    id={i}
-                    title={this.newsSetting.title+(i+1)}
-                    text={this.newsSetting.text}
-                    date={this.newsSetting.date}
-                    category={this.newsSetting.catergory}
-                    cover={this.newsSetting.cover}
-                    onClick={()=>this.showModal(i)}
-                />
-            );
-        }
 
         let news = this.newsData.slice(0, this.countNews);
         this.setState({

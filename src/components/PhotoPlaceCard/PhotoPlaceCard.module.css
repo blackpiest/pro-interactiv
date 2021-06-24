@@ -191,3 +191,9 @@
     background-size: contain;
 }
 
+
+@media screen and (max-width: 320px) {
+    .option__body {
+        flex: inherit;
+    }
+}

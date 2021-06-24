@@ -1,0 +1,23 @@
+.simplebar-wrapper {
+    margin-top: 4.4px !important;
+}
+
+.simplebar-track {
+    visibility: inherit; 
+    overflow: initial !important;
+}
+
+.simplebar-scrollbar {
+    left: 7px !important;
+}
+
+.simplebar-scrollbar::before {
+    background-color: var(--color-accent) !important;
+    width: 3px !important;
+    opacity: 100 !important;
+    border-radius: 100px;
+}
+
+.simplebar-content {
+    box-sizing: content-box !important; 
+}

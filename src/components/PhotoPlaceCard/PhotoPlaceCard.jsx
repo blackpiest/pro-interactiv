@@ -4,6 +4,9 @@ import Button from '../Button/Button';
 import ItemList from './ItemList.jsx';
 import PhotoPlaceOption from './PhotoPlaceOption';
 import Slider from '../Slider/Slider';
+import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
+import './ScrollBar.css';
 
 const PhotoPlaceCard = (props) => {
     const timeList = [
@@ -21,8 +24,8 @@ const PhotoPlaceCard = (props) => {
 
     const createOptions = () => {
         const optionList = [];
-        const count = 3;
-        
+        const count = 20;
+
         const optionSetting = {
             title: "Разработка макета рамки #",
             price: 17500,
@@ -34,7 +37,7 @@ const PhotoPlaceCard = (props) => {
                 <PhotoPlaceOption
                     key={i}
                     id={`${props.id}_${i}`}
-                    title={optionSetting.title + (i+1)}
+                    title={optionSetting.title + (i + 1)}
                     cover={optionSetting.cover}
                     price={optionSetting.price + (i * 100)}
                 />
@@ -45,25 +48,25 @@ const PhotoPlaceCard = (props) => {
     }
 
     const slides = [
-        {id: 0, url: "https://egor-redchenko.ru/test_pro_interactiv/photo.jpg", title: ""},
-        {id: 1, url: "https://egor-redchenko.ru/test_pro_interactiv/photo.jpg", title: ""},
-        {id: 2, url: "https://egor-redchenko.ru/test_pro_interactiv/photo.jpg", title: ""},
-        {id: 3, url: "https://egor-redchenko.ru/test_pro_interactiv/photo.jpg", title: ""},
-        {id: 4, url: "https://egor-redchenko.ru/test_pro_interactiv/photo.jpg", title: ""}
-    ]   
+        { id: 0, url: "https://egor-redchenko.ru/test_pro_interactiv/photo.jpg", title: "" },
+        { id: 1, url: "https://egor-redchenko.ru/test_pro_interactiv/photo.jpg", title: "" },
+        { id: 2, url: "https://egor-redchenko.ru/test_pro_interactiv/photo.jpg", title: "" },
+        { id: 3, url: "https://egor-redchenko.ru/test_pro_interactiv/photo.jpg", title: "" },
+        { id: 4, url: "https://egor-redchenko.ru/test_pro_interactiv/photo.jpg", title: "" }
+    ]
 
     return (
         <div className={`container ${style.card}`}>
-            <Slider images={slides}/>
+            <Slider images={slides} />
             <div className={style.card__name}>
                 <h3>{props.title}</h3>
                 <p><strong>Размер: </strong>{props.size}</p>
             </div>
             <div className={style.options}>
                 <p className={style.options__title}>Доп. опции</p>
-                <div className={style.options__group}>
+                <SimpleBar scrollbarMinSize="25" forceVisible="y" autoHide={false} style={{ maxHeight: 148 }}>
                     {createOptions()}
-                </div>
+                </SimpleBar>
             </div>
 
             <div className={style.card__time}>
@@ -74,7 +77,7 @@ const PhotoPlaceCard = (props) => {
             </div>
             <div className={style.card__footer}>
                 <p className={style.card__footer__price}>{props.price}<span> ₽</span></p>
-                <Button title="Оставить заявку" />
+                <Button onClick={props.onClick} title="Оставить заявку" />
             </div>
         </div>
     );
